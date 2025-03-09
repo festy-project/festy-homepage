@@ -1,9 +1,8 @@
-import React from 'react';
 import { getFestivalLineups } from '@/apis/services/event';
 import ArtistCard from '@/domains/festivals/components/section/headliner/ArtistCard';
 import HeadlinerSectionAccordionClient from '@/domains/festivals/components/section/headliner/HeadlinerSectionAccordion.client';
+import type { Artist } from '@/models/event';
 import { Condition } from '@/utils';
-import type { Artist, FlatLineup } from '@/models/event';
 
 type HeadlinerSectionProps = {
   festivalId: string;
