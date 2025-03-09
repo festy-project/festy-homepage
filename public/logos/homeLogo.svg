@@ -1,0 +1,21 @@
+<svg width="360" height="83" viewBox="0 0 360 83" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1434_6647)" filter="url(#filter0_d_1434_6647)">
+<path d="M78.3186 0L72.6546 21.4286H40.8722L39.4362 26.7857H71.2186L65.5546 48.2143H33.7722L26.6722 75H5.48389L25.3479 0H78.3186ZM143.16 0L137.496 21.4286H105.713L104.277 26.7857H130.763L125.099 48.2143H98.6134L97.1775 53.5714H128.96L123.296 75H70.3251L90.1892 0H143.16ZM162.816 48.2143C145.154 48.2143 138.485 40.114 142.793 23.8974C146.989 7.97117 157.934 0 175.581 0H210.011L204.347 21.4286H169.916C166.39 21.4286 164.412 22.2515 163.981 23.8974C163.455 25.8337 164.954 26.7857 168.481 26.7857H184.372C202.034 26.7857 208.751 34.7569 204.555 50.6831C200.247 66.8997 189.27 75 171.608 75H137.177L142.841 53.5714H177.272C180.798 53.5714 182.84 52.6033 183.367 50.6831C183.797 49.0372 182.234 48.2143 178.708 48.2143H162.816ZM239.098 75H217.909L232.109 21.4286H213.569L219.234 0H277.501L271.837 21.4286H253.298L239.098 75ZM297.844 39.5815L297.158 37.5L281.841 0H305.837L313.624 19.5084L331.956 0H356L321.138 37.6614L318.905 40.0656L309.635 75H288.446L297.828 39.5815H297.844Z" fill="white"/>
+<path d="M25.3478 0H4C4 0 23.1939 8.11639 20.9921 16.4426L25.3478 0Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_d_1434_6647" x="0" y="0" width="360" height="83" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1434_6647"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1434_6647" result="shape"/>
+</filter>
+<clipPath id="clip0_1434_6647">
+<rect width="352" height="75" fill="white" transform="translate(4)"/>
+</clipPath>
+</defs>
+</svg>

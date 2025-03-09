@@ -1,4 +1,233 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{}</component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="28d2f374-7120-4c75-b1a0-0039ebdff664" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.prettierrc.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emotion.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/DLDK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/S2O.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/Ultra.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/WDJF.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/downloadSectionBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/festivalList.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/festivalMock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/homeBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/mobile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/mobile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/mobileBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/mobileBackground.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/tablet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/Festy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/FestyLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/downArrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/festyLogo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/homeLogo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logos/opengraph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/animations/fadeinout/fadeInOut.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/animations/textTransition/bottomToTop.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apis/auth.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apis/customFetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apis/fetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apis/http-client.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apis/response.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apis/services/event.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/emotion.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/festivals/[festivalId]/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/festivals/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/fonts/PretendardVariable.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/page.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/TimeTable.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Timeline.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/design-tokens.tokens.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/Caret.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/Email.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/Instagram.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/Place.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/Ticket.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Accordian.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AppStoreButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DownloadButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FestyDownloadFooter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navigation/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Navigation/styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PlayStoreButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Pointer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Select.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Stack/Stack.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Stack/Stack.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Stack/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/StackContainer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TimeTableCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Txt/Txt.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Txt/Txt.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Txt/Txt.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Txt/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/ClientQueryProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/queryClientOptions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/reactQuery.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contents/privacy-policy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/FestivalFooter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/LinkSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/section/FestivalInfoCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/section/FestivalInfoHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/section/headliner/ArtistCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/section/headliner/HeadlinerSection.server.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/section/headliner/HeadlinerSectionAccordion.client.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/section/timetable/TimetableOptionContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/section/timetable/TimetableOptionSelectSection.client.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/festivals/components/section/timetable/TimetableViewSection.client.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/components/FestivalCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/components/Parallax.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/components/Parallax.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/components/ParallaxText.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/components/TabletMock.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/layouts/AboutSection.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/layouts/AboutSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/layouts/DownloadSection.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/layouts/DownloadSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/layouts/HomeSection.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/layouts/HomeSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/layouts/TimeTableSection.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/layouts/TimeTableSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domains/home/layouts/styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useGenerateVars.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mocks/timeTableData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/event.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/FestyTheme.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/Home.styled.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/themes/colors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/themes/fontSizes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/themes/fontWeight.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/themes/globalStyles.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/themes/theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/themes/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/PageProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/fetch.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/components/ComponentProps.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/components/Condition.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/components/FormattedValue.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/components/formatOrReturn.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/components/iif.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/debounce.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/hooks/createSafeContext.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/hooks/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/hooks/useAddEventListener.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/hooks/useMergeRef.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/hooks/useStackScrollBlock.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/throttle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2u4ICb5Ivnxh9O6NUiwmMCIc0Gl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ChatTagsLlmMigration": "true",
+    "RunOnceActivity.CodyAccountHistoryMigration": "true",
+    "RunOnceActivity.CodyAccountsIdsRefresh": "true",
+    "RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount": "true",
+    "RunOnceActivity.CodyConvertUrlToCodebaseName": "true",
+    "RunOnceActivity.CodyHistoryLlmMigration": "true",
+    "RunOnceActivity.CodyMigrateChatHistory-v2": "true",
+    "RunOnceActivity.CodyProjectSettingsMigration": "true",
+    "RunOnceActivity.DeprecatedChatLlmMigration": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.ToggleCodyToolWindowAfterMigration": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/junhyeok/code/react/festy-hompage/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/Users/junhyeok/code/react/festy-hompage/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src/styles" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="28d2f374-7120-4c75-b1a0-0039ebdff664" name="Changes" comment="" />
+      <created>1741501293488</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741501293488</updated>
+      <workItem from="1741501294747" duration="365000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/next.config.mjs" />
+      </list>
+    </option>
+  </component>
 </project>

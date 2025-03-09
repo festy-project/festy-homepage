@@ -1,0 +1,175 @@
+:root{
+    --cosmos100: '#fbe0e4';
+    --cosmos200: '#f7c5ce';
+    --cosmos300: '#f3aab7';
+    --cosmos400: '#ef8fa0';
+    --cosmos500: '#ec768a';
+    --cosmos600: '#e43f5b';
+    --cosmos700: '#d21d3d';
+    --cosmos800: '#a61730';
+    --cosmos900: '#791123';
+
+    --lilac100: '#eddbf0';
+    --lilac200: '#dbb8e0';
+    --lilac300: '#d0a2d7';
+    --lilac400: '#c68dce';
+    --lilac500: '#bb78c4';
+    --lilac600: '#b062bb';
+    --lilac700: '#92449d';
+    --lilac800: '#713479';
+    --lilac900: '#4f2555';
+
+    --lavender100: '#ddd2f9';
+    --lavender200: '#bba6f2';
+    --lavender300: '#a387ee';
+    --lavender400: '#8f6cea';
+    --lavender500: '#7a50e6';
+    --lavender600: '#541fdb';
+    --lavender700: '#491bc0';
+    --lavender800: '#381593';
+    --lavender900: '#270f67';
+
+    --white: '#ffffff';
+    --grey100: '#f3f3f6';
+    --grey200: '#e7e7ee';
+    --grey300: '#d9d9e3';
+    --grey400: '#bbbbcd';
+    --grey500: '#9595b1';
+    --grey600: '#5f5f82';
+    --grey700: '#494964';
+    --grey800: '#343447';
+    --grey900: '#09090c';
+}
+
+* {
+    margin: 0;
+    word-break: keep-all;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    transition: color, background-color 0.3s ease-in-out;
+    font-family: 'Pretendard', sans-serif;
+}
+html{
+    font-size: 10px;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
