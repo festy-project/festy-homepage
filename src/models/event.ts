@@ -48,6 +48,7 @@ export type FlatLineup = {
   artist: Artist;
   day?: number; // min: 1, cxan be null if not available
 };
+
 type PagingElement = {
   limit: number;
   offset: number;
