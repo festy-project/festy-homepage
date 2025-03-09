@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import type { Artist } from '@/models/event';
 import React from 'react';
 
@@ -23,4 +23,5 @@ const ArtistCard = ({ artist }: { artist: Artist }) => {
     </div>
   );
 };
+
 export default ArtistCard;
