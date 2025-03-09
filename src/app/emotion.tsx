@@ -3,7 +3,7 @@ import { CacheProvider, ThemeProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import { useServerInsertedHTML } from 'next/navigation';
 import { useState } from 'react';
-import { theme, GlobalStyles } from '@/styles';
+import { theme } from '@/styles';
 
 export default function RootStyleRegistry({ children }: { children: JSX.Element }) {
   const [{ cache, flush }] = useState(() => {
