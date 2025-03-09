@@ -3,6 +3,7 @@ import { getFestivalLineups } from '@/apis/services/event';
 import ArtistCard from '@/domains/festivals/components/section/headliner/ArtistCard';
 import HeadlinerSectionAccordionClient from '@/domains/festivals/components/section/headliner/HeadlinerSectionAccordion.client';
 import { Condition } from '@/utils';
+import type { Artist, FlatLineup } from '@/models/event';
 
 type HeadlinerSectionProps = {
   festivalId: string;
@@ -11,11 +12,17 @@ type HeadlinerSectionProps = {
 const HeadlinerSection = async ({ festivalId }: HeadlinerSectionProps) => {
   const data = await getFestivalLineups({ eventId: festivalId, limit: 999 }, {});
   const artists = data.data.results ?? [];
-  const sortedArtistsByPopularity = artists.sort(
-    (a, b) => (b.artist?.popularity ?? 0) - (a.artist?.popularity ?? 0),
+
+  const flattenedArtists = artists
+    .flatMap((artist) => artist)
+    .map(({ artist }) => artist) as Artist[];
+
+  const sortedArtistsByPopularity = flattenedArtists.sort(
+    (a, b) => (b?.popularity ?? 0) - (a?.popularity ?? 0),
   );
+
   const headliners = sortedArtistsByPopularity.slice(0, 8);
-  const restArtists = sortedArtistsByPopularity.slice(8);
+  const restArtists = sortedArtistsByPopularity.slice(8).map((artist) => ({ artist }));
 
   return (
     <Condition
@@ -23,11 +30,10 @@ const HeadlinerSection = async ({ festivalId }: HeadlinerSectionProps) => {
       then={
         <div className="flex flex-col">
           <section className="grid grid-cols-2 gap-1">
-            {headliners.map(({ artist }) => (
+            {headliners.map((artist) => (
               <ArtistCard key={artist.id} artist={artist} />
             ))}
           </section>
-
           <HeadlinerSectionAccordionClient artists={restArtists} />
         </div>
       }

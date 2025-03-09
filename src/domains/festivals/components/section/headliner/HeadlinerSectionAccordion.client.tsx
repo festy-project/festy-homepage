@@ -47,9 +47,13 @@ const HeadlinerSectionAccordionClient = ({ artists }: { artists: Lineup[] }) => 
         custom={0.5}
         className="grid grid-cols-2 gap-1"
       >
-        {artists.map(({ artist }) => (
-          <ArtistCard key={artist.id} artist={artist} />
-        ))}
+        {artists.flatMap(({ artist }) =>
+          Array.isArray(artist) ? (
+            artist.map((a) => <ArtistCard key={a.id} artist={a} />)
+          ) : (
+            <ArtistCard key={artist.id} artist={artist} />
+          ),
+        )}
       </motion.section>
     </Accordion>
   );

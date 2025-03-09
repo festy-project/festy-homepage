@@ -40,10 +40,14 @@ export type Artist = {
 };
 
 export type Lineup = {
-  artist: Artist;
+  artist: Artist | Artist[];
   day?: number; // min: 1, can be null if not available
 };
 
+export type FlatLineup = {
+  artist: Artist;
+  day?: number; // min: 1, cxan be null if not available
+};
 type PagingElement = {
   limit: number;
   offset: number;

@@ -4,7 +4,7 @@ import React from 'react';
 
 const ArtistCard = ({ artist }: { artist: Artist }) => {
   return (
-    <div key={artist.id} className="relative h-[120px] overflow-hidden rounded-[6px]">
+    <div className="relative h-[120px] overflow-hidden rounded-[6px]">
       {artist.profileImage && (
         <Image
           alt={artist.artistName}
