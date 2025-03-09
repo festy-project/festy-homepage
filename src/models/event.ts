@@ -41,7 +41,7 @@ export type Artist = {
 
 export type Lineup = {
   artist: Artist | Artist[];
-  day?: number; // min: 1, can be null if not available
+  day?: number;
 };
 
 export type FlatLineup = {
