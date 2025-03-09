@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { apiClient } from '@/apis/http-client';
+import type { ResponseType } from '@/types/fetch';
 
-// 페스티벌 데이터 타입 정의
+
 interface Festival {
   id: string;
   eventName: string;
@@ -10,21 +11,12 @@ interface Festival {
   [key: string]: any;
 }
 
-// API 응답 타입 정의
-interface ApiResponse {
-  success: boolean;
-  data: {
-    results: Festival[];
-    [key: string]: any;
-  };
-  [key: string]: any;
-}
 
-// 모든 축제 목록을 가져오는 함수
+
 async function getAllFestivals(): Promise<Festival[]> {
   try {
-    // apiClient를 사용하여 모든 페스티벌 목록을 가져옵니다
-    const response = await apiClient.get<ApiResponse>('/events', {
+    
+    const response = await apiClient.get<ResponseType<{results: Festival[]}>>('/events', {
       params: {
         orderBy: 'date',
         sort: 'desc',
@@ -32,7 +24,7 @@ async function getAllFestivals(): Promise<Festival[]> {
         limit: 999,
         offset: 0
       },
-      cache: 'no-store'
+      next: { revalidate: 3600 } // 1시간마다 재검증
     });
     
     if (response.success && response.data && response.data.results) {
@@ -57,19 +49,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily' as const,
       priority: 1,
     },
+    {
+      url: `${baseUrl}/festivals`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
   ];
 
-  // 축제 데이터 가져오기
-  const festivals = await getAllFestivals();
-  
+  try {
+    // 축제 데이터 가져오기
+    const festivals = await getAllFestivals();
+    
+    // 축제 페이지 URL 생성
+    const festivalUrls = festivals.map((festival: Festival) => ({
+      url: `${baseUrl}/festivals/${festival.id}`,
+      lastModified: new Date(festival.startDate), // 축제 시작일을 마지막 수정일로 설정
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
+    }));
 
-  // 축제 페이지 URL 생성
-  const festivalUrls = festivals.map((festival: Festival) => ({
-    url: `${baseUrl}/festivals/${festival.id}`,
-    lastModified: new Date(festival.startDate), // 축제 시작일을 마지막 수정일로 설정
-    changeFrequency: 'daily' as const,
-    priority: 0.8,
-  }));
-
-  return [...routes, ...festivalUrls];
+    return [...routes, ...festivalUrls];
+  } catch (error) {
+    console.error('사이트맵 생성 중 오류 발생:', error);
+    return routes; // 오류 발생 시 기본 경로만 반환
+  }
 } 

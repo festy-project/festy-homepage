@@ -17,7 +17,7 @@ import type { Metadata, ResolvingMetadata } from 'next';
 
 type Props = {
   params: Promise<{ festivalId: string }>;
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 
