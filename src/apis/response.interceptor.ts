@@ -70,17 +70,32 @@ export class HttpClient implements FetchClient {
     const controller = new AbortController();
     const timeoutId = setTimeout(
       () => controller.abort(),
-      options.timeout || this.config.timeout || 5000,
+      options?.timeout || this.config.timeout || 5000,
     );
 
     try {
+      let finalUrl = url;
+      if (options?.params) {
+        const queryParams = new URLSearchParams();
+        Object.entries(options.params).forEach(([key, value]) => {
+          if (value !== undefined && value !== null) {
+            queryParams.append(key, String(value));
+          }
+        });
+        
+        const queryString = queryParams.toString();
+        if (queryString) {
+          finalUrl = `${url}${url.includes('?') ? '&' : '?'}${queryString}`;
+        }
+      }
+
       const modifiedOptions = await this.runRequestInterceptors({
         ...options,
         method,
         signal: controller.signal,
       });
 
-      const fullUrl = `${this.config.baseURL}${url}`;
+      const fullUrl = `${this.config.baseURL}${finalUrl}`;
       const response = await fetch(fullUrl, modifiedOptions);
       clearTimeout(timeoutId);
 

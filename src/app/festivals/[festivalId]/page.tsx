@@ -12,6 +12,13 @@ import { Condition } from '@/utils';
 import { TimetableOptionProvider } from '@/domains/festivals/components/section/timetable/TimetableOptionContext';
 import TimetableOptionSelectSection from '@/domains/festivals/components/section/timetable/TimetableOptionSelectSection.client';
 import TimetableViewSection from '@/domains/festivals/components/section/timetable/TimetableViewSection.client';
+import type {Metadata} from 'next';
+
+
+export const metadata: Metadata = {
+    title: 'Festy',
+    description: '당신의 놀라운 축제를 위해, 새로운 소식부터 내 주변 파티까지 빠르게 Festy에서 확인하세요!',
+};
 
 async function Page({ params }: PageProps<{ festivalId: string; day: string; stage: string }>) {
   const { festivalId } = await params;
