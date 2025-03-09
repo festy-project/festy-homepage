@@ -11,7 +11,7 @@ const HeadlinerSection = async ({ festivalId }: HeadlinerSectionProps) => {
   const data = await getFestivalLineups({ eventId: festivalId, limit: 999 }, {});
   const artists = data.data.results;
   const sortedArtistsByPopularity = artists.sort(
-    (a, b) => (b.artist.popularity ?? 0) - (a.artist.popularity ?? 0),
+    (a, b) => (b.artist?.popularity ?? 0) - (a.artist?.popularity ?? 0),
   );
   const headliners = sortedArtistsByPopularity.slice(0, 8);
   const restArtists = sortedArtistsByPopularity.slice(8);

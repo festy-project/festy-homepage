@@ -70,7 +70,7 @@ export type ArtistWithGenres = {
   youtubeUrl?: string;
   soundcloudUrl?: string;
   spotifyUrl?: string;
-  popularity: number; // min: 0
+  popularity?: number; // min: 0
   genres: string[];
 };
 
