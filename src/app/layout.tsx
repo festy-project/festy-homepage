@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import './globals.css';
-import '@/styles/theme.css';
+
 import RootStyleRegistry from '@/app/emotion';
 import ClientQueryProvider from '@/config/ClientQueryProvider';
 import localFont from 'next/font/local';
+import './globals.css';
 
 const pretendard = localFont({
   src: '../app/fonts/PretendardVariable.woff2',

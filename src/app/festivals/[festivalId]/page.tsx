@@ -12,13 +12,51 @@ import { Condition } from '@/utils';
 import { TimetableOptionProvider } from '@/domains/festivals/components/section/timetable/TimetableOptionContext';
 import TimetableOptionSelectSection from '@/domains/festivals/components/section/timetable/TimetableOptionSelectSection.client';
 import TimetableViewSection from '@/domains/festivals/components/section/timetable/TimetableViewSection.client';
-import type {Metadata} from 'next';
+import type { Metadata, ResolvingMetadata } from 'next';
 
 
-export const metadata: Metadata = {
-    title: 'Festy',
-    description: '당신의 놀라운 축제를 위해, 새로운 소식부터 내 주변 파티까지 빠르게 Festy에서 확인하세요!',
+type Props = {
+  params: Promise<{ festivalId: string }>;
+  searchParams: { [key: string]: string | string[] | undefined };
 };
+
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // 페스티벌 ID 가져오기
+  const { festivalId } = await params;
+
+  
+  const festivalResponse = await getFestival(festivalId, {
+    cache: 'no-store',
+  });
+  const festival = festivalResponse.data;
+
+
+  const previousImages = (await parent).openGraph?.images || [];
+
+
+
+  return {
+    title: `${festival.eventName} 쪽집개 | Festy`,
+    description: `${festival.eventName} 정보를 한눈에! Festy에서 최신 정보를 확인하세요!`,
+    openGraph: {
+      title: `${festival.eventName} 쪽집개 | Festy`,
+      description: `${festival.eventName} 정보를 한눈에! Festy에서 최신 정보를 확인하세요!`,
+      images: festival.thumbnail ? [festival.thumbnail, ...previousImages] : previousImages,
+      type: 'website',
+      locale: 'ko_KR',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${festival.eventName} 쪽집개 | Festy`,
+      description: `${festival.eventName} 정보를 한눈에! Festy에서 최신 정보를 확인하세요!`,
+      images: festival.thumbnail ? [festival.thumbnail] : [],
+    },
+  };
+}
 
 async function Page({ params }: PageProps<{ festivalId: string; day: string; stage: string }>) {
   const { festivalId } = await params;
@@ -96,7 +134,7 @@ async function Page({ params }: PageProps<{ festivalId: string; day: string; sta
           <div>123123</div>
         </FestivalInfoCard>
         <hr className="bg-white pt-[1px] opacity-10" />
-        <FestivalInfoCard title="월디페 최신정보">
+        <FestivalInfoCard title={`${festival.eventName} 최신정보`}>
           <div>123123</div>
         </FestivalInfoCard>
         <hr className="bg-white pt-[1px] opacity-10" />
