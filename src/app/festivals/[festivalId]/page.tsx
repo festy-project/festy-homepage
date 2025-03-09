@@ -25,7 +25,7 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  // 페스티벌 ID 가져오기
+  
   const { festivalId } = await params;
 
   
