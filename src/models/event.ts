@@ -36,7 +36,7 @@ export type Artist = {
   soundcloudUrl?: string;
   spotifyUrl?: string;
   livesetVideo?: string;
-  popularity: number; // min: 0
+  popularity?: number; // min: 0
 };
 
 export type Lineup = {
