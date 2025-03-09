@@ -1,12 +1,11 @@
 'use client';
-import React from 'react';
-import Accordion from '@/components/Accordian';
-import type { Lineup } from '@/models/event';
-import ArtistCard from '@/domains/festivals/components/section/headliner/ArtistCard';
 import { fadeMotion } from '@/animations/fadeinout/fadeInOut';
+import Accordion from '@/components/Accordian';
+import ArtistCard from '@/domains/festivals/components/section/headliner/ArtistCard';
+import type { Artist } from '@/models/event';
 import { motion } from 'framer-motion';
 
-const HeadlinerSectionAccordionClient = ({ artists }: { artists: Lineup[] }) => {
+const HeadlinerSectionAccordionClient = ({ artists }: { artists: Artist[] }) => {
   return (
     <Accordion
       renderTrigger={(isOpen, setIsOpen) => (
@@ -47,13 +46,9 @@ const HeadlinerSectionAccordionClient = ({ artists }: { artists: Lineup[] }) => 
         custom={0.5}
         className="grid grid-cols-2 gap-1"
       >
-        {artists.flatMap(({ artist }) =>
-          Array.isArray(artist) ? (
-            artist.map((a) => <ArtistCard key={a.id} artist={a} />)
-          ) : (
-            <ArtistCard key={artist.id} artist={artist} />
-          ),
-        )}
+        {artists.map((artist, idx) => (
+          <ArtistCard key={`${artist.id}-${idx}`} artist={artist} />
+        ))}
       </motion.section>
     </Accordion>
   );

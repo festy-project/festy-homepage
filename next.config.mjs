@@ -4,7 +4,7 @@ const nextConfig = {
   presets: [['@babel/preset-react', { runtime: 'automatic', importSource: '@emotion/core' }]],
   plugins: ['babel-plugin-emotion'],
   images: {
-    domains: ['localhost', '127.0.0.1', 'i.scdn.co'],
+    domains: ['localhost', '127.0.0.1', 'i.scdn.co', 'i1.sndcdn.com'],
   },
 };
 

@@ -22,7 +22,7 @@ const HeadlinerSection = async ({ festivalId }: HeadlinerSectionProps) => {
   );
 
   const headliners = sortedArtistsByPopularity.slice(0, 8);
-  const restArtists = sortedArtistsByPopularity.slice(8).map((artist) => ({ artist }));
+  const restArtists = sortedArtistsByPopularity.slice(8);
 
   return (
     <Condition
@@ -30,8 +30,8 @@ const HeadlinerSection = async ({ festivalId }: HeadlinerSectionProps) => {
       then={
         <div className="flex flex-col">
           <section className="grid grid-cols-2 gap-1">
-            {headliners.map((artist) => (
-              <ArtistCard key={artist.id} artist={artist} />
+            {headliners.map((artist, idx) => (
+              <ArtistCard key={`${artist.id}-${idx}`} artist={artist} />
             ))}
           </section>
           <HeadlinerSectionAccordionClient artists={restArtists} />
