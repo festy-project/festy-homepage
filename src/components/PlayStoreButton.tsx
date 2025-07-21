@@ -45,21 +45,11 @@ export const BlurBackground = styled.div`
   backdrop-filter: blur(6px);
 `;
 
-interface PlayStoreButtonProps {
-  disabled?: boolean;
-}
-
-const PlayStoreButton = ({ disabled = false }: PlayStoreButtonProps) => {
+const PlayStoreButton = () => {
   return (
     <StyledPlayStoreButton
       href={'https://play.google.com/store/apps/details?id=app.festy.mobile.android'}
     >
-      {disabled && (
-        <>
-          <Txt>Android는 추후 출시예정이예요.</Txt>
-          <BlurBackground />
-        </>
-      )}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="203"
