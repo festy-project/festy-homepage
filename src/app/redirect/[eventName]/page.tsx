@@ -1,19 +1,15 @@
 'use client';
 
-import { useEffect, useState, useCallback, use } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
 
-interface PageProps {
-  params: Promise<{
-    eventName: string;
-    eventId: string;
-  }>;
-}
-
-export default function RedirectPage({ params }: PageProps) {
+export default function RedirectPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [userAgent, setUserAgent] = useState<string>('');
-  const { eventName, eventId } = use(params);
+  const searchParams = useSearchParams();
+
+  const eventId = searchParams.get('share-id');
 
   useEffect(() => {
     setUserAgent(navigator.userAgent);
@@ -32,10 +28,10 @@ export default function RedirectPage({ params }: PageProps) {
     if (isIOS) {
       return 'https://apps.apple.com/kr/app/id1668793166';
     } else if (isAndroid) {
-      return 'https://play.google.com/store/apps/details?id=app.festy.mobile.android';
+      return 'https://apps.apple.com/kr/app/festy-%ED%8E%98%EC%8A%A4%ED%8B%B0-%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C-%ED%83%80%EC%9E%84%ED%85%8C%EC%9D%B4%EB%B8%94/id1668793166';
     }
     // 데스크톱이나 기타 기기의 경우 iOS 앱스토어로 기본 설정
-    return 'https://apps.apple.com/kr/app/id1668793166';
+    return 'https://apps.apple.com/kr/app/festy-%ED%8E%98%EC%8A%A4%ED%8B%B0-%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C-%ED%83%80%EC%9E%84%ED%85%8C%EC%9D%B4%EB%B8%94/id1668793166';
   }, [userAgent]);
 
   const tryDeepLink = useCallback(() => {
@@ -48,7 +44,7 @@ export default function RedirectPage({ params }: PageProps) {
     }
 
     // 딥링크 시도
-    const deepLinkUrl = `festy://event/${eventId}`;
+    const deepLinkUrl = `festy://sharedTimetable?share-id=${eventId}`;
     const fallbackDelay = 2500;
 
     // 앱이 설치되어 있지 않을 때의 fallback
@@ -141,7 +137,7 @@ export default function RedirectPage({ params }: PageProps) {
                 variants={itemVariants}
                 className="mb-10 text-2xl leading-relaxed font-bold text-white"
               >
-                {eventName} 타임테이블 확인하기
+                공유된 타임테이블 확인하기
               </motion.p>
 
               <motion.div variants={itemVariants} className="flex w-full max-w-xs justify-center">
@@ -149,7 +145,7 @@ export default function RedirectPage({ params }: PageProps) {
                   href={getDownloadUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-lavender-600 border-lavender-600 flex w-[200px] items-center justify-center rounded-2xl border px-4 py-3 text-base font-semibold text-white shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/30 active:scale-95"
+                  className="bg-lavender-600 border-lavender-600 flex w-[200px] items-center justify-center rounded-2xl border px-4 py-3 text-base font-semibold text-white transition-all"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
