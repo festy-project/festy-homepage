@@ -3,9 +3,9 @@ import { getSharedTimetable } from '@/apis/services/shared-timetable';
 import type { MyTimetable } from '@/models/event';
 import RedirectContent from './components/RedirectContent';
 
-interface PageProps {
-  searchParams: { 'share-id'?: string };
-}
+type Props = {
+  searchParams: Promise<{ 'share-id'?: string }>;
+};
 
 async function getSharedTimetableData(sharedTimetableId: string): Promise<MyTimetable | null> {
   try {
@@ -17,8 +17,8 @@ async function getSharedTimetableData(sharedTimetableId: string): Promise<MyTime
   }
 }
 
-export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
-  const eventId = searchParams['share-id'];
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const { ['share-id']: eventId } = await searchParams;
 
   if (!eventId) {
     return {
@@ -37,8 +37,9 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   };
 }
 
-export default async function RedirectPage({ searchParams }: PageProps) {
-  const eventId = searchParams['share-id'] || null;
+export default async function RedirectPage({ searchParams }: Props) {
+  const { ['share-id']: eventIdRaw } = await searchParams;
+  const eventId = eventIdRaw || null;
   const sharedTimetable = eventId ? await getSharedTimetableData(eventId) : null;
 
   return <RedirectContent eventId={eventId} sharedTimetable={sharedTimetable} />;
