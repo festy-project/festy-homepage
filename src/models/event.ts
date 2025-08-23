@@ -96,3 +96,31 @@ export type Timetable = {
 export type TimeTableRequest = {
   eventDateId: string;
 };
+
+// 공유된 타임테이블 관련 타입들
+export type EventDayWithParticipation = EventDay & {
+  participated: boolean | null; // 로그인 되지 않은 경우 null
+};
+
+export type StageName = string;
+
+export type SubscribedTimeline = {
+  stageName: StageName;
+  timeline: Timeline;
+};
+
+export type MyTimetable = {
+  id: string;
+  name: string;
+  eventDay: EventDayWithParticipation;
+  subscribedTimelines: SubscribedTimeline[];
+};
+
+export type SharedTimetableResponse = {
+  success: boolean;
+  data: MyTimetable;
+};
+
+export type SharedTimetableRequest = {
+  sharedTimetableId: string;
+};
