@@ -39,7 +39,7 @@ async function getAllFestivals(): Promise<Festival[]> {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://festy.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://festy.app';
   
   // 기본 URL 목록
   const routes = [
