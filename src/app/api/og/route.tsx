@@ -8,7 +8,7 @@ export async function GET(req: Request) {
   const header = searchParams.get('header') || '';
   const day = searchParams.get('day') || '';
   const date = searchParams.get('date') || '';
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://festy.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://festy.app';
 
   return new ImageResponse(
     (

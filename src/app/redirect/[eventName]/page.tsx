@@ -55,7 +55,7 @@ export async function generateMetadata({  searchParams }: Props): Promise<Metada
       
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://festy.com'}/api/og?${new URLSearchParams(searchparams).toString()}`,
+          url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://festy.app'}/api/og?${new URLSearchParams(searchparams).toString()}`,
           width: 1200,
           height: 630,
         },
