@@ -36,10 +36,10 @@ export async function generateMetadata({  searchParams }: Props): Promise<Metada
 
 
     const searchparams = {
-      header: encodeURIComponent(eventName),
-      title: encodeURIComponent(timetableName),
-      day: dayStr ? encodeURIComponent(dayStr) : '',
-      date: dateStr ? encodeURIComponent(dateStr) : '',
+      header: (eventName),
+      title: (timetableName),
+      day: dayStr ? (dayStr) : '',
+      date: dateStr ? (dateStr) : '',
     }
   return {
     title: sharedTimetable ? `${sharedTimetable.name} - Festy` : '공유된 타임테이블 - Festy',
