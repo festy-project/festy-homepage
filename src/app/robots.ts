@@ -4,10 +4,16 @@ export default function robots(): MetadataRoute.Robots {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://festy.com';
   
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+      {
+        userAgent: '*',
+        allow: '/api/og/*',
+      },
+    ],
     sitemap: `${baseUrl}/sitemap.xml`,
   };
 } 

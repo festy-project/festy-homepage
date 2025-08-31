@@ -112,8 +112,11 @@ export type SubscribedTimeline = {
 export type MyTimetable = {
   id: string;
   name: string;
+  eventId: string;
+  eventName: string;
   eventDay: EventDayWithParticipation;
   subscribedTimelines: SubscribedTimeline[];
+  copiedUsers:number;
 };
 
 export type SharedTimetableResponse = {

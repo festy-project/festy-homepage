@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { format } from 'date-fns';
+import { ko } from 'date-fns/locale';
 import { getSharedTimetable } from '@/apis/services/shared-timetable';
 import type { MyTimetable } from '@/models/event';
 import RedirectContent from './components/RedirectContent';
@@ -17,23 +19,48 @@ async function getSharedTimetableData(sharedTimetableId: string): Promise<MyTime
   }
 }
 
-export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+export async function generateMetadata({  searchParams }: Props): Promise<Metadata> {
   const { ['share-id']: eventId } = await searchParams;
 
-  if (!eventId) {
-    return {
-      title: '공유된 타임테이블 - Festy',
-      description: 'Festy에서 공유된 타임테이블을 확인하세요.',
-    };
-  }
+ 
 
-  const sharedTimetable = await getSharedTimetableData(eventId);
+  const sharedTimetable = await getSharedTimetableData(eventId || '');
 
+  // Build OG meta from shared timetable data
+  const eventName = sharedTimetable ? sharedTimetable.eventName : '공유된 타임테이블';
+  const timetableName = sharedTimetable ? sharedTimetable.name : '공유된 타임테이블';
+  const dayStr = sharedTimetable ? `Day ${sharedTimetable.eventDay.eventDayNumber}` : undefined;
+  const dateStr = sharedTimetable
+    ? format(new Date(sharedTimetable.eventDay.eventDate), 'yyyy.MM.dd(eee)', { locale: ko })
+    : undefined;
+
+
+    const searchparams = {
+      header: encodeURIComponent(eventName),
+      title: encodeURIComponent(timetableName),
+      day: dayStr ? encodeURIComponent(dayStr) : '',
+      date: dateStr ? encodeURIComponent(dateStr) : '',
+    }
   return {
     title: sharedTimetable ? `${sharedTimetable.name} - Festy` : '공유된 타임테이블 - Festy',
     description: sharedTimetable
       ? `${sharedTimetable.name} 타임테이블을 Festy 앱에서 확인하세요.`
       : 'Festy에서 공유된 타임테이블을 확인하세요.',
+    openGraph: {
+      title: sharedTimetable ? `${sharedTimetable.name} - Festy` : '공유된 타임테이블 - Festy',
+      description:
+        sharedTimetable
+          ? `${sharedTimetable.name} 타임테이블을 Festy 앱에서 확인하세요.`
+          : 'Festy에서 공유된 타임테이블을 확인하세요.',
+      
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://festy.com'}/api/og?${new URLSearchParams(searchparams).toString()}`,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
   };
 }
 
